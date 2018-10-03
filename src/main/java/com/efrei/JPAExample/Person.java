@@ -2,6 +2,7 @@ package com.efrei.JPAExample;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Person {
@@ -10,6 +11,7 @@ public class Person {
 	private long id;
 	private String name;
 	private int age;
+	private City city;
 	
 	public Person(long id, String name, int age) {
 		super();
@@ -18,6 +20,15 @@ public class Person {
 		this.age = age;
 	}
 	
+	@ManyToOne
+	public City getCity() {
+		return city;
+	}
+
+	public void setCity(City city) {
+		this.city = city;
+	}
+
 	public long getId() {
 		return id;
 	}

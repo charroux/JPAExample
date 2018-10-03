@@ -1,5 +1,7 @@
 package com.efrei.JPAExample;
 
+import java.util.Set;
+
 import javax.persistence.EntityManager;
 
 public class Main {
@@ -14,6 +16,15 @@ public class Main {
 		Person person = entityManager.find(Person.class, 1);
 		
 		entityManager.remove(tintin);
+		
+		City moulinsart = new City("mMulinsart");
+		Set<Person> persons = moulinsart.getPersons();
+		persons.add(tintin);
+		
+		tintin.setCity(moulinsart);
+		
+		entityManager.persist(moulinsart);
+		
 	}
 
 }

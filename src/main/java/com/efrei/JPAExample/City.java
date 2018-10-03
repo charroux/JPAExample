@@ -15,6 +15,11 @@ public class City {
 	@Id
 	private String name;
 
+	public City(String name) {
+		super();
+		this.name = name;
+	}
+
 	public String getName() {
 		return name;
 	}

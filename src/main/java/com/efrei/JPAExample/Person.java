@@ -11,6 +11,13 @@ public class Person {
 	private String name;
 	private int age;
 	
+	public Person(long id, String name, int age) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.age = age;
+	}
+	
 	public long getId() {
 		return id;
 	}
@@ -29,6 +36,8 @@ public class Person {
 	public void setAge(int age) {
 		this.age = age;
 	}
+	
+	
 	
 	
 

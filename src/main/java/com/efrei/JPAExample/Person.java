@@ -3,16 +3,20 @@ package com.efrei.JPAExample;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 @Entity
 public class Person {
 	
-	@Id
 	private long id;
 	private String name;
 	private int age;
 	private City city;
 	
+	public Person() {
+		super();
+	}
+
 	public Person(long id, String name, int age) {
 		super();
 		this.id = id;
@@ -29,6 +33,7 @@ public class Person {
 		this.city = city;
 	}
 
+	@Id
 	public long getId() {
 		return id;
 	}

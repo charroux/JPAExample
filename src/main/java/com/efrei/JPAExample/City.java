@@ -1,8 +1,11 @@
 package com.efrei.JPAExample;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -10,14 +13,27 @@ import javax.persistence.OneToMany;
 @Entity
 public class City {
 	
-	private Set<Person> persons = new HashSet<Person>();
+	private List<Person> persons = new ArrayList<Person>();
 	
-	@Id
+	private long id;
 	private String name;
+
+	public City() {
+		super();
+	}
 
 	public City(String name) {
 		super();
 		this.name = name;
+	}
+
+	@Id
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -28,15 +44,18 @@ public class City {
 		this.name = name;
 	}
 
-	@OneToMany(mappedBy="city")
-	public Set<Person> getPersons() {
+	@OneToMany(mappedBy="city", cascade=CascadeType.ALL)
+	public List<Person> getPersons() {
 		return persons;
 	}
 
-	public void setPersons(Set<Person> persons) {
+	public void setPersons(List<Person> persons) {
 		this.persons = persons;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "City [persons=" + persons + ", id=" + id + ", name=" + name + "]";
+	}
 	
 }

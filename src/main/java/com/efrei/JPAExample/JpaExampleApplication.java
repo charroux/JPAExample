@@ -1,5 +1,10 @@
 package com.efrei.JPAExample;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.print.attribute.standard.PrinterLocation;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -19,6 +24,10 @@ public class JpaExampleApplication {
 	@Bean
 	public CommandLineRunner demo(CityRepository repository) {
 		return (args) -> {
+			
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			Date date = dateFormat.parse("2018-10-09");
+			log.info(date.toString());
 			
 			City paris = new City("Paris");
 			Person tintin = new Person(1, "Tintin", 20);

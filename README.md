@@ -1,6 +1,4 @@
 # JPAExample
-https://github.com/charroux/JPAExample/blob/master/src/main/java/com/efrei/JPAExample/JpaExampleApplication.java
-
 
 Download the project
 

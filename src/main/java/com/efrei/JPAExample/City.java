@@ -7,6 +7,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -44,7 +45,7 @@ public class City {
 		this.name = name;
 	}
 
-	@OneToMany(mappedBy="city", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="city", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	public List<Person> getPersons() {
 		return persons;
 	}

@@ -43,35 +43,4 @@ public class JpaExampleApplication {
 		};
 	}
 
-	
-	/*@Bean
-	public CommandLineRunner demo(PersonRepository repository) {
-		return (args) -> {
-			
-			repository.save(new Person(1, "Tintin", 20));
-			repository.save(new Person(2, "Hadock", 50));
-
-			log.info("Persons found with findAll():");
-			log.info("-------------------------------");
-			for (Person person : repository.findAll()) {
-				log.info(person.toString());
-			}
-			log.info("");
-
-			repository.findById(1L)
-				.ifPresent(person -> {
-					log.info("Person found with findById(1L):");
-					log.info("--------------------------------");
-					log.info(person.toString());
-					log.info("");
-				});
-
-			log.info("Person found with findName('Tintin'):");
-			log.info("--------------------------------------------");
-			repository.findByName("Tintin").forEach(tintin -> {
-				log.info(tintin.toString());
-			});
-			
-		};
-	}
-*/}
+}

@@ -11,6 +11,8 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class City {
 	
@@ -46,6 +48,7 @@ public class City {
 	}
 
 	@OneToMany(mappedBy="city", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	@JsonIgnore
 	public List<Person> getPersons() {
 		return persons;
 	}

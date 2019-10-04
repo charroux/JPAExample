@@ -13,7 +13,7 @@ Launch the main program: https://github.com/charroux/JPAExample/blob/master/src/
 
 Open the H2 web console: http://localhost:8080/h2-console
 
-In the login page make sure that you use jdbc:h2:mem:testdb as JDBC URL.
+In the login page make sure that you use jdbc:h2:mem:testdb as JDBC URL and org.h2.Driver as the Driver class.
 
 
 Web Service: http://localhost:8080/cities

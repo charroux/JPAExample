@@ -23,3 +23,4 @@ Web Service: http://localhost:8080/cities
 
 # Transactions management
 
+https://github.com/charroux/JPAExample/blob/master/src/main/java/com/efrei/JPAExample/TransactionManagement.java

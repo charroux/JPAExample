@@ -12,18 +12,19 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 @SpringBootApplication
 public class JpaExampleApplication {
 
-	@Bean
-	TransactionManagement transactionManagement(){
-		return new TransactionManagement();
-	}
-
-	@Autowired
-	TransactionManagement transactionManagement;
-	
 	private static final Logger log = LoggerFactory.getLogger(JpaExampleApplication.class);
 
 	public static void main(String[] args) {
@@ -55,19 +56,6 @@ public class JpaExampleApplication {
 			log.info("--------------------------------------------");
 			log.info("City found with findName('Paris'):");
 			repository.findByName("Paris").forEach(city -> {
-				log.info(city.toString());
-			});
-
-			try{
-
-				transactionManagement.rollBackExample();;
-
-			}catch (Exception e){
-			}
-
-			log.info("-----London as been rolled back----------------------");
-			log.info("City found with findName('London'):");
-			repository.findByName("London").forEach(city -> {
 				log.info(city.toString());
 			});
 

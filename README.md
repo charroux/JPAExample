@@ -23,4 +23,8 @@ Web Service: http://localhost:8080/cities
 
 # Transactions management
 
-https://github.com/charroux/JPAExample/blob/master/src/main/java/com/efrei/JPAExample/TransactionManagement.java
+Le web service contient une méthode annotée @Transactionnal
+
+https://github.com/charroux/JPAExample/blob/master/src/main/java/com/efrei/JPAExample/RestWebService.java
+
+Ce qui signifie que les requêtes dans la base de données seront annulées si une exception se produit.

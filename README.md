@@ -2,13 +2,13 @@
 
 Download or git clone the project
 
-# build
+# Edit
 
-Build it with: gradlew build
+Open this project inside Intellij
 
-Convert the project into an Eclipse project with: gradlew eclipse
+or
 
-Import the project inside Eclipse: File -> Import -> General -> Existing projects into workspace
+Import this project as a Gradle project inside Eclipse
 
 # Run
 Launch the main program: https://github.com/charroux/JPAExample/blob/master/src/main/java/com/efrei/JPAExample/JpaExampleApplication.java
@@ -23,8 +23,8 @@ Web Service: http://localhost:8080/cities
 
 # Transactions management
 
-Le web service contient une méthode annotée @Transactionnal
+The Web Service contains a method annotated with @Transactionnal
 
 https://github.com/charroux/JPAExample/blob/master/src/main/java/com/efrei/JPAExample/RestWebService.java
 
-Ce qui signifie que les requêtes dans la base de données seront annulées si une exception se produit.
+This means that the requests in the database will be cancelled is an exception occurs.

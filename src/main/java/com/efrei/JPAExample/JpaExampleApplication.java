@@ -53,6 +53,14 @@ public class JpaExampleApplication {
 			}
 			log.info("");
 
+			log.info("-------------------------------");
+			log.info("Persons associted with a city");
+			Iterable<City> cities = repository.findAll();
+			City c = cities.iterator().next();
+
+			List<Person> persons = c.getPersons();
+			log.info(persons.toString());
+
 			log.info("--------------------------------------------");
 			log.info("City found with findName('Paris'):");
 			repository.findByName("Paris").forEach(city -> {

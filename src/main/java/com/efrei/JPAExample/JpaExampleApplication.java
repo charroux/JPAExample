@@ -25,8 +25,6 @@ import javax.persistence.Persistence;
 @SpringBootApplication
 public class JpaExampleApplication {
 
-	private static final Logger log = LoggerFactory.getLogger(JpaExampleApplication.class);
-
 	public static void main(String[] args) {
 		SpringApplication.run(JpaExampleApplication.class, args);
 	}
@@ -37,7 +35,7 @@ public class JpaExampleApplication {
 			
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date date = dateFormat.parse("2018-10-09");
-			log.info(date.toString());
+			System.out.println(date.toString());
 			
 			City paris = new City("Paris");
 			Person tintin = new Person("Tintin", 20);
@@ -46,25 +44,24 @@ public class JpaExampleApplication {
 			
 			repository.save(paris);
 
-			log.info("-------------------------------");
-			log.info("Cities found with findAll():");
+			System.out.println("-------------------------------");
+			System.out.println("Cities found with findAll():");
 			for (City city : repository.findAll()) {
-				log.info(city.toString());
+				System.out.println(city.toString());
 			}
-			log.info("");
 
-			log.info("-------------------------------");
-			log.info("Persons associted with a city");
+			System.out.println("-------------------------------");
+			System.out.println("Persons associted with a city");
 			Iterable<City> cities = repository.findAll();
 			City c = cities.iterator().next();
 
 			List<Person> persons = c.getPersons();
-			log.info(persons.toString());
+			System.out.println(persons.toString());
 
-			log.info("--------------------------------------------");
-			log.info("City found with findName('Paris'):");
+			System.out.println("--------------------------------------------");
+			System.out.println("City found with findName('Paris'):");
 			repository.findByName("Paris").forEach(city -> {
-				log.info(city.toString());
+				System.out.println(city.toString());
 			});
 
 		};

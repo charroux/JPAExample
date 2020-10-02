@@ -1,5 +1,7 @@
 # JPAExample
 
+JDK11 compatible
+
 Download or git clone the project
 
 # Edit
